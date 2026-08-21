@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GripForce | Multi-Use Pull-Up Bar</title>
+<meta name="description" content="GripForce multi-use pull-up bar — train at home with one versatile bar.">
+<style>
+:root{--bg:#07090c;--card:#10141a;--text:#f5f7fa;--muted:#aab3bf;--accent:#d7ff3f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:auto;padding:0 22px}
+.logo{font-weight:900;font-size:24px;letter-spacing:-1px}.logo span{color:var(--accent)}
+.nav a{color:#d7dbe1;margin-left:24px;font-size:14px}.btn{display:inline-block;background:var(--accent);color:#080a0d;padding:14px 22px;border-radius:12px;font-weight:800;border:0;cursor:pointer}
+.hero{max-width:1120px;margin:auto;padding:70px 22px 90px;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:2px;font-size:12px}.hero h1{font-size:clamp(45px,7vw,78px);line-height:.95;letter-spacing:-4px;margin:15px 0 22px}.hero p{font-size:18px;line-height:1.6;color:var(--muted);max-width:570px}
+.product{background:linear-gradient(145deg,#151a21,#0c1015);border:1px solid #242b34;border-radius:28px;min-height:430px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.bar{width:75%;height:32px;background:#20262d;border-radius:20px;box-shadow:0 18px 35px #0008;position:relative}.bar:before,.bar:after{content:"";position:absolute;width:72px;height:190px;background:#171c22;border-radius:22px;top:-78px}.bar:before{left:14%}.bar:after{right:14%}.grip{position:absolute;height:70px;width:28px;background:#303841;border-radius:14px;top:-19px}.g1{left:31%}.g2{right:31%}.badge{position:absolute;right:18px;top:18px;background:var(--accent);color:#090b0e;padding:8px 11px;border-radius:9px;font-size:12px;font-weight:900}
+section{max-width:1120px;margin:auto;padding:70px 22px}.title{font-size:40px;letter-spacing:-2px;margin:0 0 12px}.sub{color:var(--muted);line-height:1.6}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.card{background:var(--card);border:1px solid #222a33;padding:26px;border-radius:18px}.card h3{margin:0 0 10px}.card p{color:var(--muted);line-height:1.6;margin:0}.buy{display:flex;justify-content:space-between;align-items:center;gap:20px;background:var(--accent);color:#080a0d;border-radius:24px;padding:32px}.price{font-size:34px;font-weight:900}.small{font-size:13px;opacity:.7}.faq{border-top:1px solid #252b33;padding:18px 0}.faq b{display:block;margin-bottom:7px}.faq span{color:var(--muted);line-height:1.5}
+footer{border-top:1px solid #1d232b;padding:30px 22px;color:#737d89;text-align:center;font-size:13px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:45px}.grid{grid-template-columns:1fr}.buy{flex-direction:column;align-items:flex-start}.nav a{display:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="logo">GRIP<span>FORCE</span></div>
+  <nav><a href="#features">Features</a><a href="#faq">FAQ</a><a href="#buy">Shop</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow">TRAIN ANYWHERE</div>
+    <h1>ONE BAR.<br>MORE WAYS<br>TO TRAIN.</h1>
+    <p>Meet the GripForce Multi-Use Pull-Up Bar — a compact home-training essential designed for pull-ups, chin-ups and bodyweight workouts.</p>
+    <a class="btn" href="#buy">GET GRIPFORCE →</a>
+  </div>
+  <div class="product" aria-label="Product illustration">
+    <div class="badge">GRIPFORCE</div>
+    <div class="bar"><i class="grip g1"></i><i class="grip g2"></i></div>
+  </div>
+</section>
+
+<section id="features">
+  <h2 class="title">Built for simple home training.</h2>
+  <p class="sub">A clean, versatile product page you can connect to your supplier or checkout later.</p>
+  <div class="grid">
+    <div class="card"><h3>Multi-Grip</h3><p>Multiple hand positions give you more options for pull-up and chin-up variations.</p></div>
+    <div class="card"><h3>Compact</h3><p>A single piece of equipment can take up far less space than a full home gym.</p></div>
+    <div class="card"><h3>At-Home Ready</h3><p>Made for convenient bodyweight training when you want to work out at home.</p></div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="buy">
+    <div><div class="small">GRIPFORCE MULTI-USE PULL-UP BAR</div><div class="price">£29.99</div><div class="small">Example retail price — change this to your real price.</div></div>
+    <a class="btn" href="#" onclick="alert('Add your real checkout/supplier link here.');return false;">BUY NOW</a>
+  </div>
+</section>
+
+<section id="faq">
+  <h2 class="title">FAQ</h2>
+  <div class="faq"><b>How do I order?</b><span>Connect the BUY NOW button to your real checkout page or order form before launching.</span></div>
+  <div class="faq"><b>Is GripForce a supplier?</b><span>No. GripForce is the storefront brand. You need to arrange your own legitimate supplier and fulfilment.</span></div>
+  <div class="faq"><b>Can this site be hosted for free?</b><span>Yes. This is a static site, so it can be hosted on a free static-hosting service.</span></div>
+</section>
+</main>
+
+<footer>© 2026 GripForce. Replace placeholder product, supplier, shipping and legal information before selling.</footer>
+</body>
+</html>
