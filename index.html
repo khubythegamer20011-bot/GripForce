@@ -1,82 +1,664 @@
-\<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GripForce | Multi-Use Pull-Up Bar</title>
-<meta name="description" content="Ha20ff965da6a47eca2109cf815d28791k[1].jpg — train at home with one versatile bar.">
-<style>
-:root{--bg:#07090c;--card:#10141a;--text:#f5f7fa;--muted:#aab3bf;--accent:#d7ff3f}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
-a{text-decoration:none;color:inherit}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:auto;padding:0 22px}
-.logo{font-weight:900;font-size:24px;letter-spacing:-1px}.logo span{color:var(--accent)}
-.nav a{color:#d7dbe1;margin-left:24px;font-size:14px}.btn{display:inline-block;background:var(--accent);color:#080a0d;padding:14px 22px;border-radius:12px;font-weight:800;border:0;cursor:pointer}
-.hero{max-width:1120px;margin:auto;padding:70px 22px 90px;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
-.eyebrow{color:var(--accent);font-weight:800;letter-spacing:2px;font-size:12px}.hero h1{font-size:clamp(45px,7vw,78px);line-height:.95;letter-spacing:-4px;margin:15px 0 22px}.hero p{font-size:18px;line-height:1.6;color:var(--muted);max-width:570px}
-.product{background:linear-gradient(145deg,#151a21,#0c1015);border:1px solid #242b34;border-radius:28px;min-height:430px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.bar{width:75%;height:32px;background:#20262d;border-radius:20px;box-shadow:0 18px 35px #0008;position:relative}.bar:before,.bar:after{content:"";position:absolute;width:72px;height:190px;background:#171c22;border-radius:22px;top:-78px}.bar:before{left:14%}.bar:after{right:14%}.grip{position:absolute;height:70px;width:28px;background:#303841;border-radius:14px;top:-19px}.g1{left:31%}.g2{right:31%}.badge{position:absolute;right:18px;top:18px;background:var(--accent);color:#090b0e;padding:8px 11px;border-radius:9px;font-size:12px;font-weight:900}
-section{max-width:1120px;margin:auto;padding:70px 22px}.title{font-size:40px;letter-spacing:-2px;margin:0 0 12px}.sub{color:var(--muted);line-height:1.6}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.card{background:var(--card);border:1px solid #222a33;padding:26px;border-radius:18px}.card h3{margin:0 0 10px}.card p{color:var(--muted);line-height:1.6;margin:0}.buy{display:flex;justify-content:space-between;align-items:center;gap:20px;background:var(--accent);color:#080a0d;border-radius:24px;padding:32px}.price{font-size:34px;font-weight:900}.small{font-size:13px;opacity:.7}.faq{border-top:1px solid #252b33;padding:18px 0}.faq b{display:block;margin-bottom:7px}.faq span{color:var(--muted);line-height:1.5}
-footer{border-top:1px solid #1d232b;padding:30px 22px;color:#737d89;text-align:center;font-size:13px}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:45px}.grid{grid-template-columns:1fr}.buy{flex-direction:column;align-items:flex-start}.nav a{display:none}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GripForce | Multi-Use Pull-Up Bar</title>
+
+  <meta name="description" content="GripForce Multi-Use Pull-Up Bar — train smarter, stronger and from home.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #222;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #ff3b30;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #ff3b30;
+    }
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        radial-gradient(circle at center, #241010 0%, #080808 55%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid #333;
+      border-radius: 30px;
+      color: #ff3b30;
+      background: #111;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #ff3b30;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #aaa;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: #ff3b30;
+      color: white;
+      box-shadow: 0 10px 30px rgba(255, 59, 48, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #ff5147;
+    }
+
+    .btn-secondary {
+      border: 1px solid #333;
+      color: white;
+      background: #111;
+    }
+
+    .btn-secondary:hover {
+      border-color: #ff3b30;
+    }
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #888;
+    }
+
+    .features {
+      background: #0d0d0d;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      padding: 30px;
+      background: #121212;
+      border: 1px solid #222;
+      border-radius: 15px;
+      transition: 0.25s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      border-color: #ff3b30;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .feature p {
+      color: #888;
+      font-size: 15px;
+    }
+
+    .product {
+      background: #080808;
+    }
+
+    .product-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .product-image {
+      min-height: 450px;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle, #2a1111 0%, #111 60%);
+      border: 1px solid #252525;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 25px;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      max-height: 430px;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    .product-info h2 {
+      font-size: 45px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .product-info p {
+      color: #999;
+      margin-bottom: 25px;
+    }
+
+    .price {
+      font-size: 38px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .price span {
+      font-size: 16px;
+      color: #777;
+      text-decoration: line-through;
+      margin-left: 8px;
+    }
+
+    .checks {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .checks li {
+      margin: 10px 0;
+      color: #ccc;
+    }
+
+    .checks li::before {
+      content: "✓";
+      color: #ff3b30;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .reviews {
+      background: #0d0d0d;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review {
+      background: #121212;
+      border: 1px solid #222;
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .stars {
+      color: #ff3b30;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .review p {
+      color: #bbb;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .review strong {
+      font-size: 14px;
+    }
+
+    .cta {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, #291010 0%, #080808 65%);
+    }
+
+    .cta h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #999;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background: #050505;
+      border-top: 1px solid #222;
+      padding: 50px 20px 25px;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: #777;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      text-decoration: none;
+      margin: 8px 0;
+      transition: 0.2s;
+    }
+
+    footer a:hover {
+      color: #ff3b30;
+    }
+
+    .copyright {
+      max-width: 1100px;
+      margin: auto;
+      padding-top: 20px;
+      border-top: 1px solid #1c1c1c;
+      color: #555;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .feature-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-box {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        min-height: 320px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+      }
+
+      .cta h2 {
+        font-size: 38px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="nav">
-  <div class="logo">GRIP<span>FORCE</span></div>
-  <nav><a href="#features">Features</a><a href="#faq">FAQ</a><a href="#buy">Shop</a></nav>
-</header>
 
-<main>
-<section class="hero">
-  <div>
-    <div class="eyebrow">TRAIN ANYWHERE</div>
-    <h1>ONE BAR.<br>MORE WAYS<br>TO TRAIN.</h1>
-    <p>Meet the GripForce Multi-Use Pull-Up Bar — a compact home-training essential designed for pull-ups, chin-ups and bodyweight workouts.</p>
-    <a class="btn" href="#buy">GET GRIPFORCE →</a>
-  </div>
-  <div class="product" aria-label="GripForce Multi-Use Pull-Up Bar">
-  <div class="badge">GRIPFORCE</div>
-  <img src="Ha20ff965da6a47eca2109cf815d28791k[1].jpg" alt="GripForce Multi-Use Pull-Up Bar" style="width:90%;max-height:380px;object-fit:contain;border-radius:20px;">
-</div>
-</section>
+  <header>
+    <nav>
+      <div class="logo">
+        Grip<span>Force</span>
+      </div>
 
-<section id="features">
-  <h2 class="title">Built for simple home training.</h2>
-  <p class="sub">A clean, versatile product page you can connect to your supplier or checkout later.</p>
-  <div class="grid">
-    <div class="card"><h3>Multi-Grip</h3><p>Multiple hand positions give you more options for pull-up and chin-up variations.</p></div>
-    <div class="card"><h3>Compact</h3><p>A single piece of equipment can take up far less space than a full home gym.</p></div>
-    <div class="card"><h3>At-Home Ready</h3><p>Made for convenient bodyweight training when you want to work out at home.</p></div>
-  </div>
-</section>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="buy">
-  <div class="buy">
-    <div><div class="small">GRIPFORCE MULTI-USE PULL-UP BAR</div><div class="price">£30.00</div><div class="small"></div></div>
-  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfU36cT3htAMh-MqOW9Qnofk2V4ANn7LrDaEis3UPQu-W0Hrg/viewform?usp=publish-editor" target="_blank">BUY NOW →</a>
-  </div>
-</section>
+  <section class="hero" id="home">
+    <div class="hero-content">
 
-<section id="faq">
- <section id="order">
-  <h2 class="title">Order GripForce</h2>
-  <p class="sub">GripForce Multi-Use Pull-Up Bar — £30.00</p>
+      <div class="badge">
+        BUILT FOR YOUR NEXT WORKOUT
+      </div>
 
-  <form action="mailto:khubythegamer20011@gmail.com" method="post" enctype="text/plain" style="margin-top:25px;display:grid;gap:14px;max-width:600px;">
-    <input type="text" name="Name" placeholder="Your name" required style="padding:15px;border-radius:10px;border:0;">
-    <input type="email" name="Email" placeholder="Your email" required style="padding:15px;border-radius:10px;border:0;">
-    <input type="number" name="Quantity" value="1" min="1" style="padding:15px;border-radius:10px;border:0;">
-    <textarea name="Order" placeholder="Order details" rows="4" style="padding:15px;border-radius:10px;border:0;">GripForce Multi-Use Pull-Up Bar — £30.00</textarea>
-    <button class="btn" type="submit">SEND ORDER REQUEST →</button>
-  </form>
-</section>
-  <h2 class="title">FAQ</h2>
-  <div class="faq"><b>How do I order?</b><span>Connect the BUY NOW button to your real checkout page or order form before launching.</span></div>
-  <div class="faq"><b>Is GripForce a supplier?</b><span>No. GripForce is the storefront brand. You need to arrange your own legitimate supplier and fulfilment.</span></div>
-  <div class="faq"><b>Can this site be hosted for free?</b><span>Yes. This is a static site, so it can be hosted on a free static-hosting service.</span></div>
-</section>
-</main>
+      <h1>
+        GET STRONGER.<br>
+        <span>ANYWHERE.</span>
+      </h1>
 
-<footer>© 2026 GripForce. Replace placeholder product, supplier, shipping and legal information before selling.</footer>
+      <p>
+        Turn any room into your personal gym with the GripForce
+        Multi-Use Pull-Up Bar. Train your back, arms, core and more.
+      </p>
+
+      <div class="buttons">
+        <a href="#product" class="btn btn-primary">
+          Shop GripForce →
+        </a>
+
+        <a href="#features" class="btn btn-secondary">
+          Learn More
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="features" id="features">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why GripForce?</h2>
+        <p>Simple equipment. Serious workouts.</p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <div class="icon">💪</div>
+          <h3>Full-Body Training</h3>
+          <p>
+            Train multiple muscle groups using one compact piece of equipment.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🏠</div>
+          <h3>Train From Home</h3>
+          <p>
+            No expensive gym membership needed. Get your workout started at home.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">⚡</div>
+          <h3>Quick Setup</h3>
+          <p>
+            Designed to be convenient, compact and ready when you are.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="product" id="product">
+
+    <div class="container">
+
+      <div class="product-box">
+
+        <div class="product-image">
+
+          <!-- YOUR PRODUCT IMAGE -->
+          <img src="product.jpg" alt="GripForce Multi-Use Pull-Up Bar">
+
+        </div>
+
+        <div class="product-info">
+
+          <h2>
+            GripForce<br>
+            Multi-Use Pull-Up Bar
+          </h2>
+
+          <p>
+            Build strength without needing a whole room full of equipment.
+            GripForce gives you a simple way to add bodyweight exercises
+            into your routine.
+          </p>
+
+          <div class="price">
+            £29.99
+            <span>£49.99</span>
+          </div>
+
+          <ul class="checks">
+            <li>Multi-use design</li>
+            <li>Compact and convenient</li>
+            <li>Great for home workouts</li>
+            <li>Multiple grip positions</li>
+          </ul>
+
+          <a href="#" class="btn btn-primary">
+            Get GripForce →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="reviews" id="reviews">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>What People Say</h2>
+        <p>Made for people who want to train anywhere.</p>
+      </div>
+
+      <div class="review-grid">
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Really useful for getting a quick workout in at home."
+          </p>
+          <strong>— Alex R.</strong>
+        </div>
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Doesn't take up much space and gives me loads of different exercises."
+          </p>
+          <strong>— Jordan M.</strong>
+        </div>
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Perfect when I don't have time to go to the gym."
+          </p>
+          <strong>— Ryan T.</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>READY TO GET STRONGER?</h2>
+
+      <p>
+        Start building your home workout setup with GripForce.
+      </p>
+
+      <a href="#product" class="btn btn-primary">
+        Shop Now →
+      </a>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div>
+        <h3>Grip<span style="color:#ff3b30;">Force</span></h3>
+
+        <p>
+          Simple fitness equipment designed to help you train
+          wherever you are.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#product">Product</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+
+        <a href="#">Contact Us</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 GripForce. All rights reserved.
+    </div>
+
+  </footer>
+
 </body>
 </html>
