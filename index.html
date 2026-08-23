@@ -29,10 +29,6 @@
       line-height: 1.6;
     }
 
-    /* =========================
-       NAVBAR
-    ========================= */
-
     header {
       position: sticky;
       top: 0;
@@ -74,10 +70,6 @@
       color: #1677ff;
     }
 
-    /* =========================
-       HERO
-    ========================= */
-
     .hero {
       min-height: 680px;
       display: flex;
@@ -98,10 +90,8 @@
       width: 100%;
       max-width: 1200px;
       margin: auto;
-
       display: grid;
       grid-template-columns: 1fr 1fr;
-
       align-items: center;
       gap: 60px;
     }
@@ -163,14 +153,9 @@
       color: white;
     }
 
-    /* =========================
-       PRODUCT IMAGE
-    ========================= */
-
     .product-showcase {
       position: relative;
       min-height: 470px;
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -179,56 +164,36 @@
     .product-card {
       width: min(500px, 95%);
       min-height: 430px;
-
       border-radius: 28px;
-
-      background: linear-gradient(
-        145deg,
-        #f4f7fb,
-        #ffffff
-      );
-
+      background: linear-gradient(145deg, #f4f7fb, #ffffff);
       box-shadow:
         0 25px 60px rgba(0, 0, 0, 0.12),
         inset 0 0 0 1px rgba(0, 0, 0, 0.04);
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       position: relative;
       overflow: hidden;
-
       padding: 25px;
     }
 
     .product-card::before {
       content: "";
-
       position: absolute;
-
       width: 300px;
       height: 300px;
-
       border-radius: 50%;
-
       background: rgba(22, 119, 255, 0.12);
-
       filter: blur(10px);
     }
 
     .hero-product-image {
       position: relative;
-
       width: 100%;
       max-width: 440px;
-
       height: auto;
-
       object-fit: contain;
-
       z-index: 2;
-
       transition: 0.3s;
     }
 
@@ -238,28 +203,17 @@
 
     .floating-tag {
       position: absolute;
-
       bottom: 25px;
       right: 25px;
-
       background: #111111;
       color: white;
-
       padding: 12px 17px;
-
       border-radius: 10px;
-
       font-weight: 800;
       font-size: 14px;
-
       z-index: 5;
-
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
-
-    /* =========================
-       TRUST BAR
-    ========================= */
 
     .trust {
       background: #080808;
@@ -270,13 +224,10 @@
     .trust-container {
       max-width: 1100px;
       margin: auto;
-
       display: flex;
       justify-content: space-around;
-
       gap: 25px;
       flex-wrap: wrap;
-
       text-align: center;
     }
 
@@ -288,10 +239,6 @@
     .trust-item span {
       color: #1677ff;
     }
-
-    /* =========================
-       FEATURES
-    ========================= */
 
     .section {
       padding: 100px 25px;
@@ -309,99 +256,68 @@
 
     .section-heading .small-title {
       color: #1677ff;
-
       font-weight: 900;
-
       text-transform: uppercase;
-
       letter-spacing: 2px;
-
       font-size: 13px;
-
       margin-bottom: 10px;
     }
 
     .section-heading h2 {
       font-size: clamp(35px, 5vw, 55px);
-
       line-height: 1;
-
       letter-spacing: -2px;
-
       margin-bottom: 15px;
     }
 
     .section-heading p {
       color: #666666;
-
       max-width: 600px;
-
       margin: auto;
     }
 
     .features {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 22px;
     }
 
     .feature {
       padding: 35px 28px;
-
       border: 1px solid #e7e7e7;
-
       border-radius: 18px;
-
       background: white;
-
       transition: 0.25s;
     }
 
     .feature:hover {
       transform: translateY(-7px);
-
-      box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.08);
-
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       border-color: #1677ff;
     }
 
     .feature-icon {
       width: 50px;
       height: 50px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       background: #eaf2ff;
-
       color: #1677ff;
-
       border-radius: 12px;
-
       font-size: 24px;
-
       margin-bottom: 20px;
     }
 
     .feature h3 {
       margin-bottom: 10px;
-
       font-size: 21px;
     }
 
     .feature p {
       color: #666666;
-
       font-size: 15px;
     }
-
-    /* =========================
-       PRODUCT SECTION
-    ========================= */
 
     .product-section {
       background: #f4f7fb;
@@ -409,43 +325,28 @@
 
     .product-content {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
       gap: 70px;
-
       align-items: center;
     }
 
     .product-image {
       min-height: 420px;
-
       background: white;
-
       border-radius: 25px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
-      box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.08);
-
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
       overflow: hidden;
-
       padding: 25px;
     }
 
     .main-product-image {
       width: 100%;
       max-width: 500px;
-
       height: auto;
-
       object-fit: contain;
-
       transition: 0.3s;
     }
 
@@ -455,115 +356,80 @@
 
     .product-info h2 {
       font-size: 45px;
-
       line-height: 1;
-
       letter-spacing: -2px;
-
       margin-bottom: 20px;
     }
 
     .product-info p {
       color: #666666;
-
       margin-bottom: 25px;
     }
 
     .check-list {
       list-style: none;
-
       margin-bottom: 30px;
     }
 
     .check-list li {
       margin-bottom: 12px;
-
       font-weight: 600;
     }
 
     .check-list li::before {
       content: "✓";
-
       color: #1677ff;
-
       font-weight: 900;
-
       margin-right: 10px;
     }
 
     .price {
       font-size: 34px;
-
       font-weight: 900;
-
       margin-bottom: 20px;
     }
 
-    /* =========================
-       CTA
-    ========================= */
-
     .cta {
       padding: 90px 25px;
-
       background: #080808;
-
       color: white;
-
       text-align: center;
     }
 
     .cta-container {
       max-width: 800px;
-
       margin: auto;
     }
 
     .cta h2 {
       font-size: clamp(38px, 5vw, 60px);
-
       line-height: 1;
-
       letter-spacing: -2px;
-
       margin-bottom: 20px;
     }
 
     .cta p {
       color: #bbbbbb;
-
       margin-bottom: 30px;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer {
       background: #050505;
-
       color: white;
-
       padding: 60px 25px 25px;
     }
 
     .footer-container {
       max-width: 1100px;
-
       margin: auto;
-
       display: grid;
-
       grid-template-columns: 2fr 1fr 1fr;
-
       gap: 50px;
-
       padding-bottom: 45px;
     }
 
     .footer-brand h2 {
       font-size: 28px;
-
       margin-bottom: 15px;
     }
 
@@ -573,29 +439,21 @@
 
     .footer-brand p {
       color: #999999;
-
       max-width: 400px;
     }
 
     .footer-column h3 {
       font-size: 15px;
-
       margin-bottom: 18px;
-
       color: white;
     }
 
     .footer-column a {
       display: block;
-
       color: #999999;
-
       text-decoration: none;
-
       margin-bottom: 10px;
-
       font-size: 14px;
-
       transition: 0.2s;
     }
 
@@ -605,19 +463,11 @@
 
     .footer-bottom {
       border-top: 1px solid #222222;
-
       padding-top: 22px;
-
       text-align: center;
-
       color: #666666;
-
       font-size: 13px;
     }
-
-    /* =========================
-       MOBILE
-    ========================= */
 
     @media (max-width: 850px) {
 
@@ -631,7 +481,6 @@
 
       .hero-container {
         grid-template-columns: 1fr;
-
         text-align: center;
       }
 
@@ -654,7 +503,6 @@
 
       .product-content {
         grid-template-columns: 1fr;
-
         gap: 40px;
       }
 
@@ -664,15 +512,12 @@
 
       .check-list {
         text-align: left;
-
         display: inline-block;
       }
 
       .footer-container {
         grid-template-columns: 1fr;
-
         gap: 35px;
-
         text-align: center;
       }
 
@@ -708,10 +553,6 @@
 
 <body>
 
-  <!-- =========================
-       NAVBAR
-  ========================= -->
-
   <header>
 
     <div class="nav">
@@ -730,11 +571,6 @@
 
   </header>
 
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
   <section class="hero">
 
     <div class="hero-container">
@@ -752,29 +588,12 @@
           GripForce Multi-Use Pull-Up Bar.
         </p>
 
+        <!-- FIXED BUTTONS -->
         <div class="hero-buttons">
 
-  <a
-    href="https://khubythegamer20011-bot.github.io/GripForce/checkout.html"
-    class="btn btn-primary"
-  >
-    Shop Now →
-  </a>
-
-  <a
-    href="#features"
-    class="btn btn-secondary"
-  >
-    Learn More
-  </a>
-
-</div>
-        
-  href="https://khubythegamer20011-bot.github.io/GripForce/checkout.html"
-  class="btn btn-primary"
->
-  Shop Now →
-</a>
+          <a
+            href="https://khubythegamer20011-bot.github.io/GripForce/checkout.html"
+            class="btn btn-primary"
           >
             Shop Now →
           </a>
@@ -789,9 +608,6 @@
         </div>
 
       </div>
-
-
-      <!-- YOUR ACTUAL PRODUCT IMAGE -->
 
       <div class="product-showcase">
 
@@ -814,11 +630,6 @@
     </div>
 
   </section>
-
-
-  <!-- =========================
-       TRUST BAR
-  ========================= -->
 
   <section class="trust">
 
@@ -844,11 +655,6 @@
 
   </section>
 
-
-  <!-- =========================
-       FEATURES
-  ========================= -->
-
   <section
     class="section"
     id="features"
@@ -873,7 +679,6 @@
 
       </div>
 
-
       <div class="features">
 
         <div class="feature">
@@ -893,7 +698,6 @@
 
         </div>
 
-
         <div class="feature">
 
           <div class="feature-icon">
@@ -910,7 +714,6 @@
           </p>
 
         </div>
-
 
         <div class="feature">
 
@@ -935,11 +738,6 @@
 
   </section>
 
-
-  <!-- =========================
-       PRODUCT
-  ========================= -->
-
   <section
     class="section product-section"
     id="product"
@@ -948,9 +746,6 @@
     <div class="section-container">
 
       <div class="product-content">
-
-
-        <!-- ACTUAL PRODUCT IMAGE -->
 
         <div class="product-image">
 
@@ -961,7 +756,6 @@
           >
 
         </div>
-
 
         <div class="product-info">
 
@@ -1013,12 +807,10 @@
             £29.99
           </div>
 
-          <!-- YOUR GOOGLE FORM -->
-
           <a
-  href="https://khubythegamer20011-bot.github.io/GripForce/checkout.html"
-  class="btn btn-primary"
->
+            href="https://khubythegamer20011-bot.github.io/GripForce/checkout.html"
+            class="btn btn-primary"
+          >
             Get GripForce →
           </a>
 
@@ -1029,11 +821,6 @@
     </div>
 
   </section>
-
-
-  <!-- =========================
-       CTA / SHOP
-  ========================= -->
 
   <section
     class="cta"
@@ -1051,23 +838,16 @@
         and start training from home.
       </p>
 
-      <!-- YOUR GOOGLE FORM -->
-
       <a
-  href="https://khubythegamer20011-bot.github.io/GripForce/checkout.html"
-  class="btn btn-primary"
->
+        href="https://khubythegamer20011-bot.github.io/GripForce/checkout.html"
+        class="btn btn-primary"
+      >
         Order GripForce →
       </a>
 
     </div>
 
   </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
 
   <footer>
 
@@ -1086,7 +866,6 @@
         </p>
 
       </div>
-
 
       <div class="footer-column">
 
@@ -1111,7 +890,6 @@
         </a>
 
       </div>
-
 
       <div class="footer-column">
 
@@ -1138,7 +916,6 @@
       </div>
 
     </div>
-
 
     <div class="footer-bottom">
 
