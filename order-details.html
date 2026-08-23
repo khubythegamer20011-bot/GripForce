@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GripForce | Order Details</title>
+
+  <title>GripForce | Complete Your Order</title>
 
   <style>
     body {
@@ -15,9 +16,9 @@
     }
 
     .container {
-      max-width: 600px;
-      margin: 80px auto;
-      padding: 40px 25px;
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 30px 25px;
     }
 
     .logo {
@@ -32,18 +33,48 @@
       margin-bottom: 15px;
     }
 
-    p {
+    .intro {
       font-size: 17px;
       line-height: 1.6;
-      color: #555;
+      color: #555555;
+      margin-bottom: 30px;
+    }
+
+    .step {
+      background: #f5f5f5;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .step strong {
+      font-size: 18px;
+    }
+
+    .step p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #555555;
+      margin-bottom: 0;
+    }
+
+    .warning {
+      margin-top: 25px;
+      padding: 16px;
+      background: #fff3cd;
+      border-radius: 8px;
+      color: #664d03;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .button {
       display: inline-block;
       margin-top: 25px;
-      padding: 15px 28px;
+      padding: 16px 30px;
       background: #111111;
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
@@ -54,10 +85,10 @@
       opacity: 0.85;
     }
 
-    .note {
-      margin-top: 25px;
-      font-size: 14px;
-      color: #777;
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #888888;
     }
   </style>
 </head>
@@ -68,12 +99,46 @@
 
     <div class="logo">GRIPFORCE</div>
 
-    <h1>Thanks for your payment! 🔥</h1>
+    <h1>Complete Your Order 🔥</h1>
 
-    <p>
-      Your PayPal payment should now be complete.
-      Please enter your delivery details below so we can process your order.
+    <p class="intro">
+      Thanks for choosing GripForce! Follow the steps below to complete your order.
     </p>
+
+    <div class="step">
+      <strong>1️⃣ Pay £29.99 through PayPal</strong>
+      <p>
+        Complete the £29.99 PayPal payment before submitting your order details.
+      </p>
+    </div>
+
+    <div class="step">
+      <strong>2️⃣ Enter your delivery details</strong>
+      <p>
+        After paying, click the button below and enter your name, email,
+        phone number, delivery address and quantity.
+      </p>
+    </div>
+
+    <div class="step">
+      <strong>3️⃣ Check your information</strong>
+      <p>
+        Make sure your delivery address and contact details are correct.
+      </p>
+    </div>
+
+    <div class="step">
+      <strong>4️⃣ Submit your order</strong>
+      <p>
+        Submit the form once you've checked everything. Your order will then be reviewed.
+      </p>
+    </div>
+
+    <div class="warning">
+      <strong>Important:</strong><br>
+      Your order will only be processed after the £29.99 PayPal payment
+      has been confirmed. Submitting the form alone does not confirm an order.
+    </div>
 
     <a
       href="https://docs.google.com/forms/d/e/1FAIpQLSfU36cT3htAMh-MqOW9Qnofk2V4ANn7LrDaEis3UPQu-W0Hrg/viewform?usp=headerherr"
@@ -83,8 +148,8 @@
       Enter Order Details →
     </a>
 
-    <div class="note">
-      Please only complete this form after making your PayPal payment.
+    <div class="footer">
+      GripForce — Built for your next workout.
     </div>
 
   </div>
