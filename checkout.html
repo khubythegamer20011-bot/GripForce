@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>GripForce | Checkout</title>
 
   <style>
@@ -59,6 +60,7 @@
     .step p {
       color: #555;
       line-height: 1.5;
+      margin-bottom: 0;
     }
 
     .button {
@@ -71,16 +73,31 @@
       border-radius: 8px;
       font-weight: bold;
       font-size: 16px;
+      border: none;
+      cursor: pointer;
     }
 
     .button:hover {
       opacity: 0.85;
     }
 
+    .locked {
+      background: #aaaaaa;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
     .note {
       margin-top: 25px;
       font-size: 14px;
       color: #777;
+    }
+
+    .success {
+      display: none;
+      margin-top: 15px;
+      color: #1677ff;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -99,8 +116,11 @@
 
     <div class="price">£29.99</div>
 
+
     <!-- STEP 1 -->
+
     <div class="step">
+
       <strong>1️⃣ Pay with PayPal</strong>
 
       <p>
@@ -111,18 +131,23 @@
         href="https://paypal.me/gripforcemultiusepul/29.99"
         class="button"
         target="_blank"
+        onclick="unlockOrderForm()"
       >
         Pay £29.99 with PayPal →
       </a>
+
     </div>
 
+
     <!-- STEP 2 -->
+
     <div class="step">
-      <strong>2️⃣ Fill in your order details</strong>
+
+      <strong>2️⃣ Enter your order details</strong>
 
       <p>
-        After paying £29.99 through PayPal, you MUST complete the order form
-        below.
+        After paying through PayPal, return to this page and click the button
+        below to complete your order form.
       </p>
 
       <p>
@@ -132,31 +157,44 @@
       </p>
 
       <p>
-  Make sure your email, phone number, delivery address and quantity
-  are correct before submitting the form.
-</p>
-
-<p>
-  <strong>
-    Please also enter the PayPal account name or email used to make the payment.
-  </strong>
-  This helps us match your payment to your order.
-</p>
+        Also enter your PayPal account/email when requested on the form.
+      </p>
 
       <a
+        id="orderButton"
         href="https://docs.google.com/forms/d/e/1FAIpQLSfU36cT3htAMh-MqOW9Qnofk2V4ANn7LrDaEis3UPQu-W0Hrg/viewform?usp=headerherr"
-        class="button"
+        class="button locked"
         target="_blank"
       >
-        Enter Order Details →
+        🔒 Enter Order Details
       </a>
+
+      <div id="successMessage" class="success">
+        ✓ PayPal opened. You can now enter your order details.
+      </div>
+
     </div>
+
 
     <div class="note">
       Orders are only processed after the £29.99 PayPal payment has been confirmed.
     </div>
 
   </div>
+
+
+  <script>
+    function unlockOrderForm() {
+
+      const button = document.getElementById("orderButton");
+      const message = document.getElementById("successMessage");
+
+      button.classList.remove("locked");
+      button.innerHTML = "Enter Order Details →";
+
+      message.style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
