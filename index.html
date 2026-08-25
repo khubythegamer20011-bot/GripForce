@@ -129,6 +129,7 @@
       font-weight: 800;
       transition: 0.25s;
       cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
@@ -146,6 +147,7 @@
     .btn-secondary {
       border: 2px solid #111111;
       color: #111111;
+      background: white;
     }
 
     .btn-secondary:hover {
@@ -389,6 +391,145 @@
       margin-bottom: 20px;
     }
 
+    /* RESISTANCE BANDS */
+
+    .bands-section {
+      background: #ffffff;
+    }
+
+    .bands-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .bands-card {
+      background: #f4f7fb;
+      border: 1px solid #e5e5e5;
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .bands-icon {
+      width: 65px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eaf2ff;
+      color: #1677ff;
+      border-radius: 16px;
+      font-size: 32px;
+      margin-bottom: 22px;
+    }
+
+    .bands-card h3 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .bands-card p {
+      color: #666666;
+      margin-bottom: 20px;
+    }
+
+    .band-price {
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .quantity-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .quantity-box label {
+      font-weight: 800;
+    }
+
+    .quantity-box input {
+      width: 75px;
+      padding: 12px;
+      border: 2px solid #dddddd;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .band-total {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .bands-info {
+      padding: 20px;
+    }
+
+    .bands-info h2 {
+      font-size: 42px;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .bands-info p {
+      color: #666666;
+      margin-bottom: 20px;
+    }
+
+    /* REVIEWS */
+
+    .reviews-section {
+      background: #f4f7fb;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .review {
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.25s;
+    }
+
+    .review:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .stars {
+      color: #1677ff;
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .review p {
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    .review-name {
+      font-weight: 900;
+    }
+
+    .review-verified {
+      color: #777777;
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
     .cta {
       padding: 90px 25px;
       background: #080808;
@@ -515,6 +656,18 @@
         display: inline-block;
       }
 
+      .bands-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bands-info {
+        text-align: center;
+      }
+
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+
       .footer-container {
         grid-template-columns: 1fr;
         gap: 35px;
@@ -547,6 +700,14 @@
       .section {
         padding: 70px 20px;
       }
+
+      .bands-card {
+        padding: 25px;
+      }
+
+      .bands-info h2 {
+        font-size: 35px;
+      }
     }
   </style>
 </head>
@@ -564,6 +725,8 @@
       <nav>
         <a href="#features">Features</a>
         <a href="#product">Product</a>
+        <a href="#bands">Bands</a>
+        <a href="#reviews">Reviews</a>
         <a href="#shop">Shop</a>
       </nav>
 
@@ -588,7 +751,6 @@
           GripForce Multi-Use Pull-Up Bar.
         </p>
 
-        <!-- FIXED BUTTONS -->
         <div class="hero-buttons">
 
           <a
@@ -822,6 +984,220 @@
 
   </section>
 
+  <!-- RESISTANCE BANDS -->
+
+  <section
+    class="section bands-section"
+    id="bands"
+  >
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <div class="small-title">
+          Add More Resistance
+        </div>
+
+        <h2>
+          Resistance Bands.
+        </h2>
+
+        <p>
+          Add resistance bands to your GripForce setup
+          for even more ways to train.
+        </p>
+
+      </div>
+
+      <div class="bands-grid">
+
+        <div class="bands-card">
+
+          <div class="bands-icon">
+            ↔
+          </div>
+
+          <h3>
+            GripForce Resistance Band
+          </h3>
+
+          <p>
+            Add a resistance band to your workout setup
+            for additional training options.
+          </p>
+
+          <div class="band-price">
+            £5.00 per band
+          </div>
+
+          <div class="quantity-box">
+
+            <label for="bandQuantity">
+              Quantity:
+            </label>
+
+            <input
+              type="number"
+              id="bandQuantity"
+              min="1"
+              max="10"
+              value="1"
+              onchange="updateBandTotal()"
+              oninput="updateBandTotal()"
+            >
+
+          </div>
+
+          <div class="band-total">
+            Total: £<span id="bandTotal">5.00</span>
+          </div>
+
+          <a
+            href="https://gripforceuk.github.io/GripForce/checkout.html"
+            class="btn btn-primary"
+          >
+            Add Resistance Bands →
+          </a>
+
+        </div>
+
+        <div class="bands-info">
+
+          <h2>
+            Upgrade your setup.
+          </h2>
+
+          <p>
+            Resistance bands are a simple addition to your
+            home training equipment and can be used for
+            different exercises and levels of resistance.
+          </p>
+
+          <ul class="check-list">
+
+            <li>
+              £5 per resistance band
+            </li>
+
+            <li>
+              Choose how many you want
+            </li>
+
+            <li>
+              Compact and easy to store
+            </li>
+
+            <li>
+              Great addition to home workouts
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- REVIEWS -->
+
+  <section
+    class="section reviews-section"
+    id="reviews"
+  >
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <div class="small-title">
+          Customer Reviews
+        </div>
+
+        <h2>
+          What people think.
+        </h2>
+
+        <p>
+          See what GripForce customers have to say.
+        </p>
+
+      </div>
+
+      <div class="reviews">
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "Really useful for home workouts and doesn't
+            take up much space."
+          </p>
+
+          <div class="review-name">
+            Alex
+          </div>
+
+          <div class="review-verified">
+            Verified Customer
+          </div>
+
+        </div>
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "The different grip positions make it easy to
+            switch up my workouts."
+          </p>
+
+          <div class="review-name">
+            Jordan
+          </div>
+
+          <div class="review-verified">
+            Verified Customer
+          </div>
+
+        </div>
+
+        <div class="review">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            "Good addition to my home setup. The bands are
+            useful as well."
+          </p>
+
+          <div class="review-name">
+            Sam
+          </div>
+
+          <div class="review-verified">
+            Verified Customer
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
   <section
     class="cta"
     id="shop"
@@ -885,6 +1261,14 @@
           Product
         </a>
 
+        <a href="#bands">
+          Resistance Bands
+        </a>
+
+        <a href="#reviews">
+          Reviews
+        </a>
+
         <a href="#shop">
           Shop
         </a>
@@ -924,6 +1308,33 @@
     </div>
 
   </footer>
+
+  <script>
+
+    function updateBandTotal() {
+
+      const quantityInput = document.getElementById("bandQuantity");
+      const totalDisplay = document.getElementById("bandTotal");
+
+      let quantity = parseInt(quantityInput.value);
+
+      if (isNaN(quantity) || quantity < 1) {
+        quantity = 1;
+        quantityInput.value = 1;
+      }
+
+      if (quantity > 10) {
+        quantity = 10;
+        quantityInput.value = 10;
+      }
+
+      const total = quantity * 5;
+
+      totalDisplay.textContent = total.toFixed(2);
+
+    }
+
+  </script>
 
 </body>
 </html>
