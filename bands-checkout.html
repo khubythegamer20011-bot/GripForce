@@ -1,1 +1,555 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>GripForce | Resistance Band Checkout</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #111111;
+      line-height: 1.6;
+      padding: 30px 20px;
+    }
+
+    .checkout-container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 30px;
+    }
+
+    .logo span {
+      color: #1677ff;
+    }
+
+    .step {
+      background: white;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      overflow: hidden;
+      border: 1px solid #e5e5e5;
+    }
+
+    .step-header {
+      padding: 20px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      background: white;
+    }
+
+    .step-header:hover {
+      background: #fafafa;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .step-number {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #1677ff;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .locked .step-number {
+      background: #cccccc;
+    }
+
+    .arrow {
+      font-size: 20px;
+      transition: 0.2s;
+    }
+
+    .open .arrow {
+      transform: rotate(180deg);
+    }
+
+    .step-content {
+      display: none;
+      padding: 0 25px 25px;
+    }
+
+    .open .step-content {
+      display: block;
+    }
+
+    .locked {
+      opacity: 0.55;
+    }
+
+    .locked .step-header {
+      cursor: not-allowed;
+    }
+
+    .product-box {
+      background: #f4f7fb;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .product-name {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .product-price {
+      color: #1677ff;
+      font-size: 24px;
+      font-weight: 900;
+      margin-top: 5px;
+    }
+
+    label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 7px;
+      margin-top: 17px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d7d7d7;
+      border-radius: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #1677ff;
+      box-shadow: 0 0 0 3px rgba(22,119,255,0.1);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .quantity-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-row input {
+      max-width: 120px;
+    }
+
+    .total-box {
+      margin-top: 25px;
+      padding: 20px;
+      background: #111111;
+      color: white;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .total-price {
+      color: #1677ff;
+      font-size: 25px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-top: 22px;
+      border: none;
+      border-radius: 10px;
+      background: #1677ff;
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #075fd8;
+      transform: translateY(-2px);
+    }
+
+    .btn:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #666666;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .back-link:hover {
+      color: #1677ff;
+    }
+
+    .success {
+      display: none;
+      background: #eaf7ee;
+      border: 1px solid #b7dfc1;
+      color: #176b2c;
+      padding: 18px;
+      border-radius: 12px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="checkout-container">
+
+    <div class="logo">
+      Grip<span>Force</span>
+    </div>
+
+    <!-- STEP 1 -->
+
+    <div class="step open" id="step1">
+
+      <div
+        class="step-header"
+        onclick="toggleStep1()"
+      >
+
+        <div class="step-title">
+
+          <div class="step-number">
+            1
+          </div>
+
+          Customer Details
+
+        </div>
+
+        <div class="arrow">
+          ▼
+        </div>
+
+      </div>
+
+      <div class="step-content">
+
+        <div class="product-box">
+
+          <div class="product-name">
+            GripForce Resistance Band
+          </div>
+
+          <div class="product-price">
+            £5.00 per band
+          </div>
+
+        </div>
+
+        <label for="name">
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your full name"
+          required
+        >
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        >
+
+        <label for="address">
+          Address
+        </label>
+
+        <textarea
+          id="address"
+          placeholder="Enter your address"
+          required
+        ></textarea>
+
+        <label for="postcode">
+          Postcode
+        </label>
+
+        <input
+          type="text"
+          id="postcode"
+          placeholder="Enter your postcode"
+          required
+        >
+
+        <button
+          class="btn"
+          onclick="openStep2()"
+        >
+          Continue to Step 2 →
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- STEP 2 -->
+
+    <div
+      class="step locked"
+      id="step2"
+    >
+
+      <div
+        class="step-header"
+        onclick="tryOpenStep2()"
+      >
+
+        <div class="step-title">
+
+          <div class="step-number">
+            2
+          </div>
+
+          Order Details
+
+        </div>
+
+        <div class="arrow">
+          ▼
+        </div>
+
+      </div>
+
+      <div class="step-content">
+
+        <label for="quantity">
+          Number of Resistance Bands
+        </label>
+
+        <div class="quantity-row">
+
+          <input
+            type="number"
+            id="quantity"
+            value="1"
+            min="1"
+            max="10"
+            oninput="updateTotal()"
+          >
+
+          <strong>
+            £5.00 each
+          </strong>
+
+        </div>
+
+        <div class="total-box">
+
+          <span>
+            Total
+          </span>
+
+          <span class="total-price">
+            £<span id="total">5.00</span>
+          </span>
+
+        </div>
+
+        <button
+          class="btn"
+          onclick="placeOrder()"
+        >
+          Place Order →
+        </button>
+
+        <div
+          class="success"
+          id="success"
+        >
+          Order details ready! We'll use the information
+          entered above to process your order.
+        </div>
+
+      </div>
+
+    </div>
+
+    <a
+      href="https://gripforceuk.github.io/GripForce/"
+      class="back-link"
+    >
+      ← Back to GripForce
+    </a>
+
+  </div>
+
+
+  <script>
+
+    let step2Unlocked = false;
+
+    function toggleStep1() {
+
+      const step1 = document.getElementById("step1");
+
+      step1.classList.toggle("open");
+
+    }
+
+
+    function openStep2() {
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const postcode = document.getElementById("postcode").value.trim();
+
+      if (!name || !email || !address || !postcode) {
+
+        alert("Please complete all your details before continuing.");
+
+        return;
+
+      }
+
+      step2Unlocked = true;
+
+      const step1 = document.getElementById("step1");
+      const step2 = document.getElementById("step2");
+
+      step1.classList.remove("open");
+
+      step2.classList.remove("locked");
+      step2.classList.add("open");
+
+      step2.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    }
+
+
+    function tryOpenStep2() {
+
+      if (!step2Unlocked) {
+
+        alert("Please complete Step 1 first.");
+
+        return;
+
+      }
+
+      const step2 = document.getElementById("step2");
+
+      step2.classList.toggle("open");
+
+    }
+
+
+    function updateTotal() {
+
+      const quantityInput = document.getElementById("quantity");
+
+      let quantity = parseInt(quantityInput.value);
+
+      if (isNaN(quantity) || quantity < 1) {
+        quantity = 1;
+        quantityInput.value = 1;
+      }
+
+      if (quantity > 10) {
+        quantity = 10;
+        quantityInput.value = 10;
+      }
+
+      const total = quantity * 5;
+
+      document.getElementById("total").textContent =
+        total.toFixed(2);
+
+    }
+
+
+    function placeOrder() {
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const postcode = document.getElementById("postcode").value.trim();
+      const quantity = document.getElementById("quantity").value;
+
+      if (!name || !email || !address || !postcode) {
+
+        alert("Please complete Step 1 first.");
+
+        return;
+
+      }
+
+      document.getElementById("success").style.display = "block";
+
+      document.getElementById("success").textContent =
+        "Order ready: " +
+        quantity +
+        " resistance band(s) — £" +
+        (quantity * 5).toFixed(2) +
+        ".";
+    }
+
+  </script>
+
+</body>
+</html>
+```
